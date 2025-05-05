@@ -21,6 +21,7 @@
             J'aime transformer des données brutes en informations claires et actionnables.
             Mon objectif : résoudre des problèmes complexes avec des solutions simples et élégantes.
         </p>
+        <canvas id="graph" width="800" height="400"></canvas>
     </section>
 
     <section id="competences">
@@ -61,10 +62,35 @@
         <p>🌐 LinkedIn : <a href="https://fr.linkedin.com/in/th%C3%A9o-schmitt-507b57220" target="_blank">Mon profil LinkedIn</a></p>
         <p>💻 GitHub : <a href="https://github.com/Theosch16" target="_blank">Theosch16</a></p>
     </section>
-
+    
     <footer>
         <p>&copy; 2025 Théo Schmitt. Tous droits réservés.</p>
     </footer>
+<script>
+  const canvas = document.getElementById('graph');
+  const ctx = canvas.getContext('2d');
 
+  let t = 0;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height / 2);
+
+    for (let x = 0; x < canvas.width; x++) {
+      const y = canvas.height / 2 + 50 * Math.sin((x + t) * 0.05);
+      ctx.lineTo(x, y);
+    }
+
+    ctx.strokeStyle = '#007acc';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    t += 2; // vitesse de l'animation
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
 </body>
 </html>
