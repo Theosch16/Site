@@ -12,7 +12,15 @@ header {
     padding: 40px 20px;
     text-align: center;
 }
-
+canvas {
+      width: 100%;
+      height: auto;
+      max-width: 1000px;
+      aspect-ratio: 2 / 1;
+      border: 1px solid #ccc;
+      background-color: white;
+      display: block;
+    }
 section {
     padding: 5px 20px;
     max-width: 800px;
