@@ -76,23 +76,23 @@
     ctx.strokeStyle = '#000';
     ctx.lineWidth = 1;
 
-    // Axe X
+    // Axe Y (gauche)
     ctx.beginPath();
-    ctx.moveTo(0, canvas.height / 2);
-    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, canvas.height);
     ctx.stroke();
 
-    // Axe Y
+    // Axe X (bas)
     ctx.beginPath();
-    ctx.moveTo(canvas.width / 2, 0);
-    ctx.lineTo(canvas.width / 2, canvas.height);
+    ctx.moveTo(0, canvas.height);
+    ctx.lineTo(canvas.width, canvas.height);
     ctx.stroke();
   }
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawAxes(); // Redessine les axes à chaque frame pour les garder visibles
+    drawAxes(); // Redessine les axes
 
     ctx.beginPath();
     ctx.moveTo(0, canvas.height / 2);
@@ -106,11 +106,12 @@
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    t += 2; // vitesse
+    t += 2;
     requestAnimationFrame(draw);
   }
 
   draw();
 </script>
+
 </body>
 </html>
