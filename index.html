@@ -72,8 +72,28 @@
 
   let t = 0;
 
+  function drawAxes() {
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 1;
+
+    // Axe X
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height / 2);
+    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.stroke();
+
+    // Axe Y
+    ctx.beginPath();
+    ctx.moveTo(canvas.width / 2, 0);
+    ctx.lineTo(canvas.width / 2, canvas.height);
+    ctx.stroke();
+  }
+
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawAxes(); // Redessine les axes à chaque frame pour les garder visibles
+
     ctx.beginPath();
     ctx.moveTo(0, canvas.height / 2);
 
@@ -86,7 +106,7 @@
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    t += 2; // vitesse de l'animation
+    t += 2; // vitesse
     requestAnimationFrame(draw);
   }
 
