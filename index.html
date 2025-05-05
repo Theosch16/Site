@@ -21,7 +21,7 @@
             J'aime transformer des données brutes en informations claires et actionnables.
             Mon objectif : résoudre des problèmes complexes avec des solutions simples et élégantes.
         </p>
-        <canvas id="graph" width="600" height="400"></canvas>
+        <canvas id="graph" width="800" height="200"></canvas>
     </section>
 
     <section id="competences">
@@ -84,22 +84,21 @@
 
     // Axe X (bas)
     ctx.beginPath();
-    ctx.moveTo(0, canvas.height - 1);
-    ctx.lineTo(canvas.width, canvas.height - 1);
+    ctx.moveTo(0, canvas.height);
+    ctx.lineTo(canvas.width, canvas.height);
     ctx.stroke();
   }
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawAxes();
+    drawAxes(); // Redessine les axes
 
     ctx.beginPath();
-    const baseY = canvas.height - 10; // position de base de la courbe, proche du bas
-    ctx.moveTo(0, baseY);
+    ctx.moveTo(0, canvas.height / 2);
 
     for (let x = 0; x < canvas.width; x++) {
-      const y = baseY - 20 * Math.sin((x + t) * 0.05); // petites oscillations au-dessus de l’axe X
+      const y = canvas.height / 2 + 50 * Math.sin((x + t) * 0.05);
       ctx.lineTo(x, y);
     }
 
