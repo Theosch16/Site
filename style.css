@@ -37,7 +37,7 @@ ul {
     margin-bottom: 20px;
 }
 
-.img-projet {
+img.img-projet {
     max-width: 100%;
     height: auto;
     display: block;
